@@ -42,12 +42,13 @@ public class TestBase {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("browserName", "chrome");
-        capabilities.setCapability("browserVersion", "100.0");
+//        capabilities.setCapability("browserName", "chrome");
+//        capabilities.setCapability("browserVersion", "100.0");
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
 
         Configuration.baseUrl = "https://demoqa.com";
+        Configuration.browserCapabilities = capabilities;
         Configuration.browserSize = "1920x1080";
         Configuration.holdBrowserOpen = false;
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
