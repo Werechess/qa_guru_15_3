@@ -1,6 +1,7 @@
 package com.demoqa.tests;
 
 import com.demoqa.pages.RegistrationFormPage;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 class PageObjectPracticeFormTests extends TestBase {
@@ -25,6 +26,7 @@ class PageObjectPracticeFormTests extends TestBase {
             city = "Karnal";
 
     @Test
+    @Disabled("Deprecated")
     void fillFormWithMaximumDataTest() {
         registrationFormPage.openPage()
                 .setFirstName(firstName)
@@ -57,6 +59,7 @@ class PageObjectPracticeFormTests extends TestBase {
     }
 
     @Test
+    @Disabled("Deprecated")
     void fillFormWithMinimumDataTest() {
         registrationFormPage.openPage()
                 .setFirstName(firstName)

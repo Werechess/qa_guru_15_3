@@ -1,5 +1,6 @@
 package com.demoqa.tests;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.appear;
@@ -25,6 +26,7 @@ class OldPracticeFormTests extends TestBase {
             city = "Karnal";
 
     @Test
+    @Disabled("Deprecated")
     void fillFormTest() {
         open("/automation-practice-form");
         $(".practice-form-wrapper > h5").shouldHave(text("Student Registration Form"));

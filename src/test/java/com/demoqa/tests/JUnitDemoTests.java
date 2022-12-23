@@ -27,12 +27,18 @@ class JUnitDemoTests {
     @Test
     void simpleTestFirst() {
         System.out.println("###         @Test simpleTestFirst !");
-        Assertions.assertTrue(2 > 1);
+        Assertions.assertTrue(true);
     }
 
     @Test
     void simpleTestSecond() {
         System.out.println("###         @Test simpleTestSecond !");
-        Assertions.assertTrue(3 > 2);
+        Assertions.assertTrue(true);
+    }
+
+    @Test
+    void simpleTestFailing() {
+        System.out.println("###         @Test simpleTestFail !");
+        Assertions.fail();
     }
 }
