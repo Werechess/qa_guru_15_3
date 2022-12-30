@@ -11,6 +11,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Locale;
 import java.util.Map;
+import java.util.Objects;
 
 import static com.demoqa.utils.RandomUtils.Gender.getRandomGender;
 import static com.demoqa.utils.RandomUtils.Month.getRandomMonth;
@@ -67,7 +68,9 @@ public class TestBase {
     void addAttachments() {
         Attach.screenshotAs("Screenshot");
         Attach.pageSource();
-        Attach.browserConsoleLogs();
+        if (Objects.equals(System.getProperty("browserName"), "chrome")) {
+            Attach.browserConsoleLogs();
+        }
         Attach.addVideo();
     }
 }
