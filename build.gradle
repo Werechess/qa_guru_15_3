@@ -19,7 +19,8 @@ dependencies {
     )
 }
 
-test {
+tasks.withType(Test) {
+    systemProperties(System.getProperties())
     useJUnitPlatform()
 
     testLogging {
@@ -27,6 +28,24 @@ test {
             events "started", "skipped", "failed", "standard_error", "standard_out"
             exceptionFormat "short"
         }
+    }
+}
+
+task someTag(type: Test) {
+    useJUnitPlatform() {
+        includeTags "some_test_tag"
+    }
+}
+
+task manyTag(type: Test) {
+    useJUnitPlatform() {
+        includeTags "many_properties_tag"
+    }
+}
+
+task hello(type: Test) {
+    useJUnitPlatform() {
+        includeTags "hello"
     }
 }
 
