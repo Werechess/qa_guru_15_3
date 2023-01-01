@@ -49,6 +49,12 @@ task hello(type: Test) {
     }
 }
 
+task notHello(type: Test) {
+    useJUnitPlatform() {
+        excludeTags "hello"
+    }
+}
+
 allure {
     report {
         version.set(allureVersion) // версия Allure Report (https://github.com/allure-framework/allure2)
