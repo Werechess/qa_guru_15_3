@@ -1,6 +1,7 @@
 package com.demoqa.tests;
 
 import com.demoqa.pages.RegistrationFormPage;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
@@ -10,6 +11,7 @@ class DataGenerationPracticeFormTests extends TestBase {
     private final RegistrationFormPage registrationFormPage = new RegistrationFormPage();
 
     @Test
+    @Tag("for_allure")
     void fillFormWithMaximumDataTest() {
         step("Open registration form", () -> {
             registrationFormPage.openPage();

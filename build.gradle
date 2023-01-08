@@ -33,6 +33,12 @@ tasks.withType(Test) {
 
 task someTag(type: Test) {
     useJUnitPlatform() {
+        includeTags "for_allure"
+    }
+}
+
+task someTag(type: Test) {
+    useJUnitPlatform() {
         includeTags "some_test_tag"
     }
 }
